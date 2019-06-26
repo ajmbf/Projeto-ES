@@ -1,0 +1,110 @@
+<br>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Tipo</th>
+    <th>Raça</th>
+    <th>Tamanho</th>
+    <th>idade</th>
+    <th>Peso</th>
+    <th>Sexo</th>
+    <th>Resumo</th>
+  </tr>
+  
+  <tr>
+    <h1><td><%= @animal.nome %></td></h1>
+     
+    <td><%= @animal.tipo %></td>
+    
+    <td><%= @animal.raca %></td>
+    
+    <td><%= @animal.tamanho %></td>
+    
+    <td><%= @animal.idade %></td>
+    
+    <td><%= @animal.peso %></td>
+    
+    <td><%= @animal.sexo %></td>
+    
+       <td><%= @animal.resumo %></td>
+       
+              <td><%= image_tag @animal.foto.url(:small) %></td>
+       
+  </tr>
+  
+</table>
+  <hr>
+
+
+  <div class="col-md-6 col-md-offset-3">
+      <%= form_for(:form, url: newpost_path) do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :nome %>
+          <%= f.text_field :nome, class: "form-control" %>
+        </div>
+       
+       <div class="form-group">
+          <%= f.label :RG %>
+          <%= f.text_field :rg, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :Telefone %>
+          <%= f.text_field :telefone, class: "form-control" %>
+        </div>
+       
+       <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <%= f.text_field :endereco, class: "form-control" %>
+        </div>
+        
+        <div class="field">
+             <label for="endereco">Possui outro animal?</label><br>
+            <%= f.radio_button :panimal, "Sim"  %>
+            <%= f.label :panimal, "Sim" %>
+            <br>
+            <%= f.radio_button :panimal, "Não"  %>
+            <%= f.label :panimal, "Não" %>
+            <br><br>
+        </div>
+          
+         <div class="form-group">
+          <label for="endereco">Se sim, quantos e de que espécie?</label>
+          <%= f.text_field :qanimal, class: "form-control" %>
+        </div>
+        
+        
+          <div class="field">
+             <label for="endereco">Qual seu tipo de moradia?</label><br>
+            <%= f.radio_button :tcasa, "Casa"  %>
+            <%= f.label :tcasa, "Casa" %>
+            <br>
+            <%= f.radio_button :tcasa, "Apartamento"  %>
+            <%= f.label :tcasa, "Apartamento" %>
+            <br><br>
+        </div>
+           <%= f.hidden_field :casa_id, value: @animal.casa_abrigo %>
+             <%= f.hidden_field :animal_id, value: @animal.id %>
+             
+         
+        
+        <%= f.submit "Enviar Formulário", class: "btn botao-laranja mt-1" %>
+      <% end %>
+    </div>
+
+
+
+
+
+
+
+      
+
+      
+      
+     
+
+ 
+ 
+ 

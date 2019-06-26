@@ -1,0 +1,69 @@
+<%# if logged_in? %>
+  <% provide(:title, 'Cadastro') %>
+  <h1 class="cabecalhos">Nova Casa de Abrigo</h1>
+  <div class="row">
+  
+  <div class="posicao-geometricas">
+    
+   <svg class="forma-laranja" width="130" height="262" viewBox="0 0 130 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <rect width="130" height="262" rx="65" fill="#F7A14A"/>
+   </svg>
+  
+   <svg class="forma-verde" width="168" height="212" viewBox="0 0 168 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <rect width="168" height="212" rx="10" fill="#32771B"/>
+   </svg>
+  
+  </div>
+  
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@casa_abrigo, url: newcasa_path,:html => { :multipart => true }) do |f| %>
+      
+       <div class="form-group">
+          <%= f.label :foto %>
+          <%= f.file_field :foto %>
+        </div> 
+        
+        <div class="form-group">
+          <%= f.label :nome %>
+          <%= f.text_field :nome, class: "form-control" %>
+        </div>
+          
+        <div class="form-group">
+          <%= f.label :documento %>
+          <%= f.text_field :documento, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <%= f.text_field :endereco, class: "form-control" %>
+        </div>  
+        
+         <div class="form-group">
+          <%= f.label :telefone %>
+          <%= f.number_field :telefone, class: "form-control" %>
+        </div>
+        
+          <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+        
+          <div class="form-group">
+            <label for="site">Site (Opcional)</label>
+          <%= f.text_field :site, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+            <label for="dadosBanc">Dados Bancários (Opcional)</label>
+          <%= f.text_field :dadosBanc, class: "form-control" %>
+        </div>
+       
+        
+        
+        <%= f.submit "Criar Casa", class: "btn botao-laranja mt-1" %>
+      <% end %>
+    </div>
+  </div>
+            
+            
+ <%# end %>  

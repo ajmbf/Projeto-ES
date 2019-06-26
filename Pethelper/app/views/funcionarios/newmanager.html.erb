@@ -1,0 +1,64 @@
+<%# if logged_in? %>
+  <% provide(:title, 'Cadastro') %>
+  <h1 class="cabecalhos">Cadastro de Gerentes</h1>
+  <div class="row">
+  
+  <div class="posicao-geometricas">
+    
+   <svg class="forma-laranja" width="130" height="262" viewBox="0 0 130 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <rect width="130" height="262" rx="65" fill="#F7A14A"/>
+   </svg>
+  
+   <svg class="forma-verde" width="168" height="212" viewBox="0 0 168 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <rect width="168" height="212" rx="10" fill="#32771B"/>
+   </svg>
+  
+  </div>
+  
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@manager, url: newmanager_path) do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :matricula %>
+          <%= f.text_field :matricula, class: "form-control" %>
+        </div>
+          
+        <div class="form-group">
+          <%= f.label :nome %>
+          <%= f.text_field :nome, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :celular %>
+          <%= f.number_field :celular, class: "form-control" %>
+        </div>  
+        
+        
+        <div class="form-group">
+          <label for="casa_id">Casa de Abrigo</label>
+          <%= f.collection_select :casa_id, CasaAbrigo.order(:nome),:id,:nome, include_blank: true %>
+        </div> 
+        
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        
+         <%= f.hidden_field :role, value: 1 %>
+        
+        <%= f.submit "Criar Gerente", class: "btn botao-laranja mt-1" %>
+      <% end %>
+    </div>
+  </div>
+            
+            
+ <%# end %> 
+ 
+ <%# #Não redirecionar para a pagina de login após cadastrar, pois essa tela é acessada pelo admin e ele pode ainda querer
+            # continuar utilizando o sistema%>
+ 

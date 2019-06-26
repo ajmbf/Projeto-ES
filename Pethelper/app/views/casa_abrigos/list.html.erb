@@ -1,0 +1,90 @@
+<br> <br>
+
+<br><br>
+
+ <%- 
+  
+ 
+   for casa in @casa_abrigo do
+
+    
+    
+         %>
+          
+          
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Documento</th>
+                  <th scope="col">Endereço</th>
+                  <th scope="col">Telefone</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Site</th>
+                  <th scope="col">Dados Bancários</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td><%= casa.nome %></td>
+                  <td><%= casa.documento %></td>
+                   <td><%= casa.endereco %></td>
+                    <td><%= casa.telefone %></td>
+                    <td><%= casa.email %></td>
+                     <td><%= casa.site %></td>
+                     <td><%= casa.dadosBanc %></td>
+                     
+                     <td>
+                      
+                      
+                          
+                          <%= form_for(:form, url: editcasa_path) do |f| %>
+            
+         
+                             <%= f.hidden_field :casa_id, value: casa.id %>
+                          
+                    
+                          
+                          <%= f.submit "Editar", class: "btn btn-success" %>
+                          
+                          <% end %>
+                        
+                      
+                      </td>
+                      
+                      
+                      <td>
+                          
+                          
+                          <%= form_for(:form, url: deletecasa_path) do |f| %>
+        
+     
+                          <%= f.hidden_field :casa_id, value: casa.id %>
+                      
+                
+                      
+                          <%= f.submit "Deletar", class: "btn btn-danger" %>
+                      
+                      
+                      
+                    
+                         <% end %>
+                      
+                          
+                      </td>
+                      
+                      
+                      
+                      
+                </tr>
+              </tbody>
+            </table>
+          <br><br>
+          
+          <% end %>
+          
+          

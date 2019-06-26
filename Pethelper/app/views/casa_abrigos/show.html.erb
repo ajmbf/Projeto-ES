@@ -1,0 +1,89 @@
+<h1><%= @casa_abrigo.nome %></h1>
+<table class="table">
+  <thead>
+  <td><%= image_tag @casa_abrigo.foto.url(:small) %></td>
+  <tr>
+    <th>Nome</th>
+    <th>documento</th>
+    <th>endereco</th>
+    <th>telefone</th>
+    <th>email</th>
+    <th>site</th>
+    <th>Dados Bancarios</th>
+  </tr>
+  </thead>
+  
+  
+  <tbody>
+  <tr>
+    <h1><td><%= @casa_abrigo.nome %></td></h1>
+     
+    <td><%= @casa_abrigo.documento %></td>
+    
+    <td><%= @casa_abrigo.endereco %></td>
+    
+    <td><%= @casa_abrigo.telefone %></td>
+    
+    <td><%= @casa_abrigo.email %></td>
+    
+    <td><%= @casa_abrigo.site %></td>
+    
+    <td><%= @casa_abrigo.dadosBanc %></td>
+  </tr>
+  </tbody>
+  
+</table>
+
+
+ <h1>Animais para adoção</h1>
+<%- @animais = Animal.where(casa_abrigo: @casa_abrigo.id)  %>   
+  <%-
+    if @animais.blank?   %>
+    <p>Esta casa não possui animais disponiveis no momento</p>
+      
+ <%-   else %>
+      
+      <%-    for animal in @animais do  %>
+          
+       
+
+
+  <div class="container py-3">
+    <div class="card">
+      <div class="row ">
+        <div class="col-md-4">
+            
+            <%= image_tag animal.foto.url(:small) %>
+          </div>
+          <div class="col-md-8 px-3">
+            <div class="card-block px-3">
+              <h4 class="card-title">Nome: <%= animal.nome %></h4>
+              <h4 class="card-title">Tipo: <%= animal.tipo %></h4>
+              <h4 class="card-title">Raça: <%= animal.raca %></h4>
+              <h4 class="card-title">Tamanho: <%= animal.tamanho %> Metros/Centimetros</h4>
+                <h4 class="card-title">Peso: <%= animal.peso %> Quilos</h4>
+                  <h4 class="card-title">Idade: <%= animal.idade %> Ano(s)</h4>
+                    <h4 class="card-title">Sexo: <%= animal.sexo %></h4>
+                  <h4 class="card-title">Casa de Abrigo: <%=nomecasa(animal.casa_abrigo)
+                  %></h4>
+              <p class="card-text"> Resumo: <%= animal.resumo %></p>
+                  
+                <p  class="btn btn-success"><%= link_to "Quero Adotar!", animal %></p>
+                 
+              
+            </div>
+       
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+  </div>
+
+  <% end
+end
+  %>
+
+  

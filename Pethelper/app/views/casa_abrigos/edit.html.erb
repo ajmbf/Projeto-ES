@@ -1,0 +1,38 @@
+<br> <br>
+
+<br><br>
+
+<h1>Atualize seu perfil</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@casa) do |f| %>
+
+
+      <%= f.label :nome %>
+      <%= f.text_field :nome, class: 'form-control' %>
+      <br>
+      <%= f.label :documento %>
+      <%= f.text_field :documento, class: 'form-control' %>
+      <br>
+      <%= f.label :endereco, "Endereço" %>
+      <%= f.text_field :endereco, class: 'form-control' %>
+      <br>
+      <%= f.label :telefone  %>
+      <%= f.text_field :telefone, class: 'form-control' %>
+       <br>
+        <%= f.label :email  %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <br>
+        <%= f.label :site  %>
+      <%= f.text_field :site, class: 'form-control' %>
+      <br>
+        <%= f.label :dadosBanc %>
+      <%= f.text_field :dadosBanc, class: 'form-control' %>
+      <br>
+
+      <%= f.submit "Salvar mudanças", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

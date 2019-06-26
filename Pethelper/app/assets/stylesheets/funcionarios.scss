@@ -1,3 +1,11 @@
 // Place all the styles related to the Funcionarios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.botao-laranja{
+    background-color: #F7A14A;
+    color: #FFFFFF;
+}
+.botao-laranja:hover{
+    color: #FFFFFF;
+    background-color: #FF8F35;
+}

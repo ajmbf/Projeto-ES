@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  casa_id: 1
+  animal_id: 1
+  rg: MyString
+  telefone: MyString
+  endereco: MyString
+  panimal: 1
+  qanimal: MyString
+  tcasa: MyString
+
+two:
+  nome: MyString
+  casa_id: 1
+  animal_id: 1
+  rg: MyString
+  telefone: MyString
+  endereco: MyString
+  panimal: 1
+  qanimal: MyString
+  tcasa: MyString

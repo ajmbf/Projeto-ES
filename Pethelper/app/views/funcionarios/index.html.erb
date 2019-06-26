@@ -1,0 +1,61 @@
+<br><br>
+
+ <%- 
+  
+ 
+   for form in @funcionarios do
+  
+   
+    
+         %>
+          
+          
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Matricula</th>
+                  <th scope="col">Celular</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td><%= form.nome %></td>
+                  <td><%= form.matricula %></td>
+                   <td><%= form.celular %></td>
+             
+                 
+                     
+                     <td>
+                      
+                      
+                      
+                      <%= form_for(:form, url: deletemanager_path) do |f| %>
+        
+     
+                         <%= f.hidden_field :form_id, value: form.id %>
+                      
+                
+                      
+                      <%= f.submit "Deletar", class: "btn btn-danger" %>
+                    <% end %>
+                      
+            
+                      
+                      </td>
+                </tr>
+              </tbody>
+            </table>
+          <br><br>
+          
+          <% end %>
+          
+          
+          
+          
+          
+          
+          
+          

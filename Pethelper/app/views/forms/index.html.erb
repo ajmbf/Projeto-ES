@@ -1,0 +1,67 @@
+<br><br>
+
+ <%- 
+  
+ 
+   for form in @forms do
+    @nome = getNome(form.animal_id)
+    
+    
+         %>
+          
+          
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Animal</th>
+                  <th scope="col">RG</th>
+                  <th scope="col">Telefone</th>
+                  <th scope="col">Endereço</th>
+                  <th scope="col">Possui animais?</th>
+                  <th scope="col">Que tipo?</th>
+                  <th scope="col">Tipo de casa</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td><%= form.nome %></td>
+                  <td><a href=<%='/animals/'+form.animal_id%> target="_blank" ><%=@nome%></a></td> 
+                  <td><%= form.rg %></td>
+                   <td><%= form.telefone %></td>
+                    <td><%= form.endereco %></td>
+                    <td><%= form.panimal %></td>
+                     <td><%= form.qanimal %></td>
+                     <td><%= form.tcasa %></td>
+                     
+                     <td>
+                      
+                      
+                      
+                      <%= form_for(:form, url: finalizar_path) do |f| %>
+        
+     
+                         <%= f.hidden_field :form_id, value: form.id %>
+                      
+                
+                      
+                      <%= f.submit "Finalizar", class: "btn btn-danger" %>
+                    <% end %>
+                      
+            
+                      
+                      </td>
+                </tr>
+              </tbody>
+            </table>
+          <br><br>
+          
+          <% end %>
+          
+          
+          
+          
+          

@@ -1,0 +1,56 @@
+<h1>Casas de Abrigo Disponiveis</h1>
+<br>
+
+<h3> Clique em alguma e veja os animais disponiveis para adocao</h3>
+<br>
+  <%- 
+   for casa in @casa_abrigo do
+         %>
+<!-- tentar colocar os cards lado a lado -->
+      
+          <div class="card" style="width: 18rem display:inline-block;">
+                <%= image_tag casa.foto.url(:small) %>
+              <div class="card-body">
+                <h3 class="card-title"> <%= casa.nome %></h3>
+                <p class="card-text">Endereco <%= casa.endereco %></p>
+                 <p class="card-text">Telefone <%= casa.telefone %></p>
+                 <p class="card-text">Email <%= casa.email %></p>
+               <p class="btn btn-success"><%= link_to "Ver Animais", casa %></p>
+               
+            
+                
+                
+                
+                
+              </div>
+          </div>
+       
+  <br>      
+   <hr>
+ 
+
+  <% end %>
+
+
+
+
+
+
+
+      
+    <br>
+ 
+    
+  <br>  
+    
+<li><%= link_to "Profile", current_user %></li>
+ <%= link_to "Log out", logout_path, method: :delete %>
+
+
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:id, "Search for:") %>
+  <%= text_field_tag(:id) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
