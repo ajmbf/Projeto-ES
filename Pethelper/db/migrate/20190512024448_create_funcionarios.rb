@@ -4,7 +4,7 @@ class CreateFuncionarios < ActiveRecord::Migration
       t.integer :matricula
       t.integer :celular
       t.string :nome
-
+      
       t.timestamps null: false
     end
   end

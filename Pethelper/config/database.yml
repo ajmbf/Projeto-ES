@@ -21,5 +21,14 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: pethelper
+  pool: 5
+  username: blog
+  password:
+  host: localhost
+  
+#  https://github.com/Aerogami/guides/wiki/Cloud9-workspace-setup-with-Rails-and-Postgresql
+ # https://community.c9.io/t/migrate-existing-rails-project-from-sqlite3-to-postgresql-for-heroku-production/12358/4
+  #https://stackoverflow.com/questions/37914702/how-to-fix-your-ruby-version-is-2-3-0-but-your-gemfile-specified-2-2-5-while/37914750
